@@ -125,29 +125,6 @@ for(i in 1:length(resul)){
   }
 
 
-a5 <- c(a3, a4)
-for(i in 1:length(a5)){
-  if(a5[i]=="nao"){
-    a5[i] <- "AAA"  
-  }
-  if(a5[i]=="atire"){
-    a5[i] <- paste(a5[i], "i", sep="")
-  }
-  if(a5[i]=="porque"){
-    a5[i] <- "mas"
-  }
-  if(a5[i]=="e"){
-    a5[i] <- "nao"
-  }
-  if(a5[i]=="nosso"){
-    a5[i] <- "morreu"
-  }
-  if(a5[i]=="amigo"){
-    a5[i] <- "reu_reu"
-  }
-}
-
-a5
 
 teste2 <- head(randu)*10
 for(i in 1:ncol(teste2)){
