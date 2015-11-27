@@ -1,0 +1,171 @@
+
+#####  Curso Introducao a Linguagem R   ####
+
+
+Maraisa Braga
+
+---------------------------------------
+        Funcoes ifelse e for
+---------------------------------------
+
+
+## Funcao ifelse ##
+ifelse(test, yes, no)
+
+--------exemplo 1--------
+  
+numero<-5
+if(numero>0){
+  print(numero)
+}
+
+if(numero>10){
+  print(numero)
+}
+
+--------exemplo 2--------
+  
+ifelse(numero > 10,  numero , NA)
+
+{
+  if(numero > 10)
+  numero 
+  else  vazio
+}
+
+--------exemplo 3--------
+  
+teste1 <- c(6:-4)
+sqrt(teste1)  # Erro
+ifelse(teste1 >= 0, sqrt(teste1), NA) # Erro
+sqrt(ifelse(teste1 >= 0, teste1, NA))
+
+
+--------exemplo 4--------
+  
+teste2 <- head(randu)*10
+
+i <- 1
+i <- 2
+i <- 3
+i <- 4
+i <- 5
+teste2[i,2]
+
+
+ifelse (teste2[i,2] > teste2[i,3],
+  sum(teste2[i,2] , teste2[i,3]), NA)
+
+
+ifelse(teste2[i,1] >= 0 & teste2[i,2] <= 5,teste2[i,3], NA)
+
+
+--------exemplo 5--------
+  
+x <- 10
+
+{
+  if (x > 8)
+    z <- 2 * x
+}
+z
+
+{
+  if (x > 12)
+       z <- 2 * x
+  else z <- 5 * x
+}
+z
+
+--------exemplo 6--------
+  
+if(teste2[i,1] >= 0 & teste2[i,2] <= 5)){ 
+  clima_rep<-raster1A
+  clima_inv<-raster1B
+  recorte<-northamerica
+}
+
+if(teste2[i,1] >= 0 & teste2[i,2] <= 5)){ 
+  clima_rep<-raster1A
+  clima_inv<-raster1B
+  recorte<-northamerica
+}
+
+
+
+
+
+
+## Funcao for ##
+
+for(i in 1:15){
+  print(i)
+}
+
+
+for(i in 1:8){
+  print("bla, bla, bla")
+}
+
+
+teste3<-c(8,15,46,23,18,4,22)
+for(i in teste3){
+  print(i)
+}
+
+
+abundancia<-c(5,8,9,1,0,7,6,12)
+resul<-numeric(10)          
+resu
+for(j in 1:10){
+  amostras<-sample(abundancia, replace=TRUE)
+  resul[j]<-mean(amostras)
+}
+
+resul
+
+
+for(i in 1:length(resul)){
+  ifelse(sqrt(resul[i]) > 2.5, 
+         resul[i] ^ 5,
+         resul[i] - 10)    
+  }
+
+
+a5 <- c(a3, a4)
+for(i in 1:length(a5)){
+  if(a5[i]=="nao"){
+    a5[i] <- "AAA"  
+  }
+  if(a5[i]=="atire"){
+    a5[i] <- paste(a5[i], "i", sep="")
+  }
+  if(a5[i]=="porque"){
+    a5[i] <- "mas"
+  }
+  if(a5[i]=="e"){
+    a5[i] <- "nao"
+  }
+  if(a5[i]=="nosso"){
+    a5[i] <- "morreu"
+  }
+  if(a5[i]=="amigo"){
+    a5[i] <- "reu_reu"
+  }
+}
+
+a5
+
+teste2 <- head(randu)*10
+for(i in 1:ncol(teste2)){
+  for(j in 1:nrow(teste2)){
+    ifelse (teste2[j,i] < 5, 
+            teste2[j,i] <- sum(teste2[j,i],-100), 
+            teste2[j,i] <- sum(teste2[j,i],100))  
+      }
+ 
+}
+
+
+
+Maraisa Braga
