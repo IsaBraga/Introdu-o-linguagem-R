@@ -1,0 +1,79 @@
+# Introducao_linguagem_R
+
+#####  Curso Introducao a Linguagem R   ####
+
+
+Maraisa Braga
+
+---------------------------------------
+            Criando funcoes
+---------------------------------------
+  
+  minhafuncao<-function(valor){
+    if(valor>15){
+      print("valor maior do que 15")}
+    if(valor>=7 & valor<=15){
+      print("valor maior do que 7, mas menor do que 15")}
+    if(valor<7){
+      print("valor e menor do que 7")}
+  }
+
+minhafuncao(5)
+minhafuncao(7)
+minhafuncao(10)
+minhafuncao(22)
+
+
+
+# exemplo com mapa de riqueza #
+
+getwd()
+setwd("C:/Users/Isa PC/Desktop/curso R/shape_files")
+
+install.packages(maptools)
+install.packages(raster)
+library(maptools)
+library(raster)
+
+shapes<-dir(pattern=".shp")
+
+americas<-readShapePoly("americas.shp")
+americas <- gUnaryUnion(americas)
+raster_vazio<-raster(x=americas, resolution=0.5, vals=0) 
+america_rasta<- rasterize(x=americas, y=raster_vazio, mask=T)
+
+shapes <- shapes[-1]
+
+map_riqueza <- function(lista_shapes){
+  mapa_raster <-america_rasta
+ for(i in 1:length(lista_shapes)){  
+  paxaro <- readShapePoly(lista_shapes[i])
+  paxaro_raster<- rasterize(x=paxaro, y=raster_vazio, field="SCINAME")
+  mapa_raster <- merge(paxaro_raster,america_rasta)+mapa_raster
+  print(lista_shapes[i])
+}
+return(mapa_raster)
+}
+
+riqueza_spp<-map_riqueza(lista_shapes=shapes)
+
+plot(mapa_raster)
+
+
+
+
+
+
+## Incriveis utilidades do R ##
+
+Funcao do Cabeleireiro Rasta
+
+O objetivo é criar uma função para pessoas que pretendam fazer Dreadlocks possa calcular quantos dreads 
+(conjunto emaranhado de fios de cabelo) terá em relação a uma espessura média de dreads. 
+
+http://ecologia.ib.usp.br/bie5782/doku.php?id=bie5782:05_curso_antigo:r2011:alunos:trabalho_final:melina:start&s[]=ifelse
+
+
+
+
+Maraisa Braga
