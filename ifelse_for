@@ -12,7 +12,6 @@ Maraisa Braga
 ## Funcao ifelse ##
 ifelse(test, yes, no)
 
---------exemplo 1--------
   
 numero<-5
 if(numero>0){
@@ -23,7 +22,6 @@ if(numero>10){
   print(numero)
 }
 
---------exemplo 2--------
   
 ifelse(numero > 10,  numero , NA)
 
@@ -33,7 +31,6 @@ ifelse(numero > 10,  numero , NA)
   else  vazio
 }
 
---------exemplo 3--------
   
 teste1 <- c(6:-4)
 sqrt(teste1)  # Erro
@@ -41,7 +38,6 @@ ifelse(teste1 >= 0, sqrt(teste1), NA) # Erro
 sqrt(ifelse(teste1 >= 0, teste1, NA))
 
 
---------exemplo 4--------
   
 teste2 <- head(randu)*10
 
@@ -60,8 +56,6 @@ ifelse (teste2[i,2] > teste2[i,3],
 ifelse(teste2[i,1] >= 0 & teste2[i,2] <= 5,teste2[i,3], NA)
 
 
---------exemplo 5--------
-  
 x <- 10
 
 {
@@ -77,7 +71,6 @@ z
 }
 z
 
---------exemplo 6--------
   
 if(teste2[i,1] >= 0 & teste2[i,2] <= 5)){ 
   clima_rep<-raster1A
